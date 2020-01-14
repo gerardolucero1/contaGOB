@@ -29,17 +29,9 @@ Route::group(['middleware' => ['auth']], function () {
     
     Route::match(['get', 'post'], '/dashboard', 'System\SystemController@index')->name('dashboard.admin');
 
-    // Portfolio routes
-    Route::get('dashboard/portafolio', 'System\PortfolioController@index')->name('portfolio.index');
-    Route::get('dashboard/portafolio/create', 'System\PortfolioController@create')->name('portfolio.create');
-    Route::get('dashboard/portafolio/show/{id}', 'System\PortfolioController@show')->name('portfolio.show');
-    Route::post('dashboard/portafolio', 'System\PortfolioController@store')->name('portfolio.store');
-    Route::get('dashboard/portafolio/edit/{id}', 'System\PortfolioController@edit')->name('portfolio.edit');
-    Route::put('dashboard/portafolio/{id}', 'System\PortfolioController@update')->name('portfolio.update');
-    Route::delete('dashboard/portafolio/{id}', 'System\PortfolioController@destroy')->name('portfolio.delete');
-        // Portfolio pictures
-        Route::post('dashboard/portafolio/{id}/imagenes', 'System\PortfolioController@upload')->name('portfolio.images');
-        Route::delete('dashboard/portafolio/image/{id}', 'System\PortfolioController@destroyImage')->name('portfolio.delete.image');
+
+    // Catalago routes
+    Route::get('dashboard/catalagos', 'System\CatalogsController@index')->name('catalogs.index');
 
     // Users routes
     Route::get('dashboard/usuarios', 'System\UsersController@index')->name('users.index');
@@ -51,20 +43,10 @@ Route::group(['middleware' => ['auth']], function () {
         //Clientes routes
         Route::get('dashboard/clientes', 'System\UsersController@clientesIndex')->name('clientes.index');
 
-    // Projects routes
-    Route::get('dashboard/proyectos', 'System\ProjectController@index')->name('projects.index');
-    Route::get('dashboard/proyectos/create', 'System\ProjectController@create')->name('projects.create');
-    Route::get('dashboard/proyectos/show/{id}', 'System\ProjectController@show')->name('projects.show');
-    Route::post('dashboard/proyectos', 'System\ProjectController@store')->name('projects.store');
-    Route::get('dashboard/proyectos/edit/{id}', 'System\ProjectController@edit')->name('projects.edit');
-    Route::put('dashboard/proyectos/{id}', 'System\ProjectController@update')->name('projects.update');
-        Route::put('dashboard/planos/{id}', 'System\ProjectController@updatePlans')->name('projects.plans');
-        Route::get('dashboard/proyectos/resumen/{id}', 'System\ProjectController@review')->name('projects.review');
-        Route::get('dashboard/proyectos/pdf/{id}', 'System\ProjectController@pdf')->name('projects.pdf');
 
     // Events routes
     Route::resource('dashboard/events', 'System\EventController');
-
+ 
         // Get cliente project
         Route::get('proyecto/cliente/{id}', function($id){
             $project = Project::find($id);

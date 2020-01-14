@@ -210,8 +210,8 @@
                                     <span class="sidebar-mini-visible">VR</span><span class="sidebar-mini-hidden">Various</span>
                                 </li>
                                 <li>
-                                    <a class="{{ request()->is('dashboard/portafolio') ? ' active' : '' }}" href="/dashboard/portafolio">
-                                        <i class="si si-folder"></i><span class="sidebar-mini-hide">Portafolio</span>
+                                    <a class="{{ request()->is('dashboard/catalagos') ? ' active' : '' }}" href="/dashboard/catalagos">
+                                        <i class="si si-folder"></i><span class="sidebar-mini-hide">Catalagos</span>
                                     </a>
                                 </li>
                                 <li>
@@ -222,11 +222,6 @@
                                 <li>
                                     <a class="{{ request()->is('dashboard/clientes') ? ' active' : '' }}" href="/dashboard/clientes">
                                         <i class="si si-users"></i><span class="sidebar-mini-hide">Clientes</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="{{ request()->is('dashboard/proyectos') ? ' active' : '' }}" href="/dashboard/proyectos">
-                                        <i class="si si-notebook"></i><span class="sidebar-mini-hide">Proyectos</span>
                                     </a>
                                 </li>
                                 
@@ -250,7 +245,7 @@
                                 </li>
                                 <li>
                                     <a href="/">
-                                        <i class="si si-globe"></i><span class="sidebar-mini-hide">Creato Studio</span>
+                                        <i class="si si-globe"></i><span class="sidebar-mini-hide">ContaGob</span>
                                     </a>
                                 </li>
                             </ul>

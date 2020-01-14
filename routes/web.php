@@ -29,6 +29,7 @@ Route::group(['middleware' => ['auth']], function () {
     
     Route::match(['get', 'post'], '/dashboard', 'System\SystemController@index')->name('dashboard.admin');
 
+<<<<<<< HEAD
     // Portfolio routes
     Route::get('dashboard/portafolio', 'System\PortfolioController@index')->name('portfolio.index');
     Route::get('dashboard/portafolio/create', 'System\PortfolioController@create')->name('portfolio.create');
@@ -40,6 +41,11 @@ Route::group(['middleware' => ['auth']], function () {
         // Portfolio pictures
         Route::post('dashboard/portafolio/{id}/imagenes', 'System\PortfolioController@upload')->name('portfolio.images');
         Route::delete('dashboard/portafolio/image/{id}', 'System\PortfolioController@destroyImage')->name('portfolio.delete.image');
+=======
+
+    // Catalago routes
+    Route::get('dashboard/catalagos', 'System\CatalogsController@index')->name('catalogs.index');
+>>>>>>> Erik
 
     // Users routes
     Route::get('dashboard/usuarios', 'System\UsersController@index')->name('users.index');
@@ -51,6 +57,7 @@ Route::group(['middleware' => ['auth']], function () {
         //Clientes routes
         Route::get('dashboard/clientes', 'System\UsersController@clientesIndex')->name('clientes.index');
 
+<<<<<<< HEAD
     // Projects routes
     Route::get('dashboard/proyectos', 'System\ProjectController@index')->name('projects.index');
     Route::get('dashboard/proyectos/create', 'System\ProjectController@create')->name('projects.create');
@@ -65,6 +72,12 @@ Route::group(['middleware' => ['auth']], function () {
     // Events routes
     Route::resource('dashboard/events', 'System\EventController');
 
+=======
+
+    // Events routes
+    Route::resource('dashboard/events', 'System\EventController');
+ 
+>>>>>>> Erik
         // Get cliente project
         Route::get('proyecto/cliente/{id}', function($id){
             $project = Project::find($id);

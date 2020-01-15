@@ -210,13 +210,8 @@
                                     <span class="sidebar-mini-visible">VR</span><span class="sidebar-mini-hidden">Various</span>
                                 </li>
                                 <li>
-<<<<<<< HEAD
-                                    <a class="{{ request()->is('dashboard/portafolio') ? ' active' : '' }}" href="/dashboard/portafolio">
-                                        <i class="si si-folder"></i><span class="sidebar-mini-hide">Portafolio</span>
-=======
                                     <a class="{{ request()->is('dashboard/catalagos') ? ' active' : '' }}" href="/dashboard/catalagos">
                                         <i class="si si-folder"></i><span class="sidebar-mini-hide">Catalagos</span>
->>>>>>> Erik
                                     </a>
                                 </li>
                                 <li>
@@ -229,14 +224,6 @@
                                         <i class="si si-users"></i><span class="sidebar-mini-hide">Clientes</span>
                                     </a>
                                 </li>
-<<<<<<< HEAD
-                                <li>
-                                    <a class="{{ request()->is('dashboard/proyectos') ? ' active' : '' }}" href="/dashboard/proyectos">
-                                        <i class="si si-notebook"></i><span class="sidebar-mini-hide">Proyectos</span>
-                                    </a>
-                                </li>
-=======
->>>>>>> Erik
                                 
                                 {{--  <li class="{{ request()->is('examples/*') ? ' open' : '' }}">
                                     <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-bulb"></i><span class="sidebar-mini-hide">Examples</span></a>
@@ -258,11 +245,7 @@
                                 </li>
                                 <li>
                                     <a href="/">
-<<<<<<< HEAD
-                                        <i class="si si-globe"></i><span class="sidebar-mini-hide">Creato Studio</span>
-=======
                                         <i class="si si-globe"></i><span class="sidebar-mini-hide">ContaGob</span>
->>>>>>> Erik
                                     </a>
                                 </li>
                             </ul>

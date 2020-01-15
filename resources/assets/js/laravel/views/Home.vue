@@ -3,33 +3,19 @@
         <!--
         <video src="/videos/video-home.mp4" width="100%" autoplay loop muted></video>
         -->
-<<<<<<< HEAD
-        <img src="https://i1.wp.com/varaeventos.com/wp-content/uploads/2017/06/tendencias-bodas-2019-1024x768.jpg" width="100%" alt="">
-=======
         <img src="http://centrotrilingue.edu.mx/wp-content/uploads/2017/07/contaduria.png" width="100%" alt="">
->>>>>>> Erik
         <div class="layer">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-8 offset-md-2">
-<<<<<<< HEAD
-                        <p class="text-left"><span class="text-main">Creamos</span> <span class="text">diseños</span></p>
-                        <p class="text-right"><span class="text-main">cumpliendo tus</span> <span class="text">sueños</span></p>
-=======
                         <p class="text-left"><span class="text-main">Contaduria Gubernamental</span></p>
->>>>>>> Erik
                     </div>
                 </div>
             </div>
 
             <div class="main-btns">
                 <div>
-<<<<<<< HEAD
-                    <a href="#" class="main-links">NUESTROS PROYECTOS</a>
-                    <a href="/dashboard" class="main-links">NOVIAS CREATO</a>
-=======
                     <a href="/dashboard" class="main-links">Comenzar</a>
->>>>>>> Erik
                 </div>
             </div>
         </div>

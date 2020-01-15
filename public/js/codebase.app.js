@@ -20796,11 +20796,7 @@ function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-module.exports = __webpack_require__(/*! C:\Program Files (x86)\EasyPHP-Devserver-17\eds-www\contaGOB\resources\assets\js\codebase\app.js */"./resources/assets/js/codebase/app.js");
-=======
 module.exports = __webpack_require__(/*! C:\Users\User\Documents\GitHub\contaGOB\resources\assets\js\codebase\app.js */"./resources/assets/js/codebase/app.js");
->>>>>>> Erik
 
 
 /***/ })

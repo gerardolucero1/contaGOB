@@ -187,7 +187,7 @@ export default {
       });
     }
   },
-  watch: {
+  watch: { 
     indexToUpdate() {
       return this.indexToUpdate;
     }

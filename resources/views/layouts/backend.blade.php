@@ -199,7 +199,7 @@
                         <!-- END Side User -->
     
                         <!-- Side Navigation -->
-                        <div class="content-side content-side-full">
+                        <div class="content-side content-side-full"> 
                             <ul class="nav-main">
                                 <li>
                                     <a class="{{ request()->is('dashboard') ? ' active' : '' }}" href="/dashboard">
@@ -209,10 +209,46 @@
                                 <li class="nav-main-heading">
                                     <span class="sidebar-mini-visible">VR</span><span class="sidebar-mini-hidden">Various</span>
                                 </li>
-                                <li>
-                                    <a class="{{ request()->is('dashboard/catalagos') ? ' active' : '' }}" href="/dashboard/catalagos">
+                                <li class="{{ request()->is('dashboard/catalagos') ? ' open' : '' }}">
+                                   <!-- <a class="{{ request()->is('dashboard/catalagos') ? ' open' : '' }} nav-submenu" href="/dashboard/catalagos">-->
+                                    <a class="nav-submenu" data-toggle="nav-submenu" href="#">
                                         <i class="si si-folder"></i><span class="sidebar-mini-hide">Catalagos</span>
                                     </a>
+                                    <ul>
+                                        <li>
+                                            <a class="{{ request()->is('/dashboard/catalogos/beneficiarios') ? ' active' : '' }}" href="/dashboard/catalogos/beneficiarios">Beneficiarios</a>
+                                        </li>
+                                        <li>
+                                            <a class="{{ request()->is('/dashboard/catalogos/proveedores') ? ' active' : '' }}" href="/dashboard/catalogos/proveedores">Proveedores</a>
+                                        </li>
+                                        <li>
+                                            <a class="{{ request()->is('/dashboard/catalogos/cuentasbancarias') ? ' active' : '' }}" href="/dashboard/catalogos/cuentasbancarias">Cuentas bancarias</a>
+                                        </li>
+                                        <li>
+                                            <a class="{{ request()->is('/dashboard/catalogos/momentoscontables') ? ' active' : '' }}" href="/dashboard/catalogos/momentoscontables">Momentos contables</a>
+                                        </li>
+                                        <li>
+                                            <a class="{{ request()->is('/dashboard/catalogos/tipocuentas') ? ' active' : '' }}" href="/dashboard/catalogos/tipocuentas">Tipos de cuentas</a>
+                                        </li>
+                                        <li>
+                                            <a class="{{ request()->is('/dashboard/catalogos/clasifadmininterna') ? ' active' : '' }}" href="/dashboard/catalogos/clasifadmininterna">Clasific. adtva. interna</a>
+                                        </li>
+                                        <li>
+                                            <a class="{{ request()->is('/dashboard/catalogos/plancuentasconac') ? ' active' : '' }}" href="/dashboard/catalogos/plancuentasconac">Plan de cuentas CONAC</a>
+                                        </li>
+                                        <li>
+                                            <a class="{{ request()->is('/dashboard/catalogos/clasifadminconac') ? ' active' : '' }}" href="/dashboard/catalogos/clasifadminconac">Clasific. adtva. CONAC</a>
+                                        </li>
+                                        <li>
+                                            <a class="{{ request()->is('/dashboard/catalogos/clasifobjetodelgasto') ? ' active' : '' }}" href="/dashboard/catalogos/clasifobjetodelgasto">Clasific. por objeto del gasto</a>
+                                        </li>
+                                        <li>
+                                            <a class="{{ request()->is('/dashboard/catalogos/clasifrubrodeingresos') ? ' active' : '' }}" href="/dashboard/catalogos/clasifrubrodeingresos">Clasific. por rubro de ingresos</a>
+                                        </li>
+                                        <li>
+                                            <a class="{{ request()->is('/dashboard/catalogos/clasiffuncional') ? ' active' : '' }}" href="/dashboard/catalogos/clasiffuncional">Clasific. funcional</a>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li>
                                     <a class="{{ request()->is('dashboard/usuarios') ? ' active' : '' }}" href="/dashboard/usuarios">

@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
-        <title>Codebase - Bootstrap 4 Admin Template &amp; UI Framework</title>
+        @yield('title')
 
         <meta name="description" content="Codebase - Bootstrap 4 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
         <meta name="author" content="pixelcave">
@@ -251,8 +251,8 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a class="{{ request()->is('dashboard/usuarios') ? ' active' : '' }}" href="/dashboard/usuarios">
-                                        <i class="si si-emoticon-smile"></i><span class="sidebar-mini-hide">Usuarios</span>
+                                    <a class="{{ request()->is('dashboard/polizas') ? ' active' : '' }}" href="/dashboard/polizas">
+                                        <i class="si si-emoticon-smile"></i><span class="sidebar-mini-hide">Pólizas</span>
                                     </a>
                                 </li>
                                 <li>

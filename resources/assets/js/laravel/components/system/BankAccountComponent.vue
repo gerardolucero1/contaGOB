@@ -60,6 +60,9 @@
                                     </td>
                                     <td class="text-center">
                                         <div class="btn-group">
+                                            <button type="button" class="btn btn-sm btn-secondary js-tooltip-enabled" data-toggle="tooltip" title="" data-original-title="Edit" @click="verCuentaBancaria(cuentabancaria)">
+                                                <i class="fa fa-eye"></i>
+                                            </button>
                                             <button type="button" class="btn btn-sm btn-secondary js-tooltip-enabled" data-toggle="tooltip" title="" data-original-title="Edit" @click="iniciaEdicionCuentaBancaria(cuentabancaria)">
                                                 <i class="fa fa-pencil"></i>
                                             </button>
@@ -75,6 +78,64 @@
                 </div>
             </div>
         </div>
+
+<div class="modal fade show" id="verCuentaBancaria" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg modal-dialog-slideleft" role="document">
+                <div class="modal-content">
+                    <div class="block block-themed block-transparent mb-0">
+                        <div class="block-header bg-primary-dark">
+                            <h3 class="block-title text-center">
+                                Crear Cuenta Bancaria
+                            </h3>
+                            <div class="block-options">
+                                <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close">
+                                    <i class="si si-close"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <div class="form-material">
+                                        <input v-model="cuentabancaria.institution" type="text" class="form-control" name="material-text" placeholder="">
+                                        <label for="material-text">Cuenta contable</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                <a class="nav-link active" id="generaldata-tab" data-toggle="tab" href="#generaldata" role="tab" aria-controls="generaldata" aria-selected="true">Datos generales</a>
+                                </li>
+                                <li class="nav-item">
+                                <a class="nav-link" id="budget-tab" data-toggle="tab" href="#budget" role="tab" aria-controls="budget" aria-selected="false">Presupuesto</a>
+                                </li>
+                                <li class="nav-item">
+                                <a class="nav-link" id="movements-tab" data-toggle="tab" href="#movements" role="tab" aria-controls="movements" aria-selected="false">Movimientos</a>
+                                </li>
+                                <li class="nav-item">
+                                <a class="nav-link" id="image-tab" data-toggle="tab" href="#image" role="tab" aria-controls="image" aria-selected="false">Imágenes</a>
+                                </li>
+                                <li class="nav-item">
+                                <a class="nav-link" id="catalogue-tab" data-toggle="tab" href="#catalogue" role="tab" aria-controls="catalogue" aria-selected="false">Catálogos</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="generaldata" role="tabpanel" aria-labelledby="generaldatas-tab">hay miles de llagas</div>
+                                <div class="tab-pane fade" id="budget" role="tabpanel" aria-labelledby="budgets-tab">grandes y pequenas</div>
+                                <div class="tab-pane fade" id="movements" role="tabpanel" aria-labelledby="movement-tab">el entumieciemento</div>
+                                <div class="tab-pane fade" id="image" role="tabpanel" aria-labelledby="images-tab">quiero una cama de agua</div>
+                                <div class="tab-pane fade" id="catalogue" role="tabpanel" aria-labelledby="catalogues-tab">hay algo bueno si lopiensass</div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" @click="guardarCuentaBancaria()" >Guardar</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <!-- Modal para agregar beneficiario --> 
         <div class="modal fade show" id="agregarCuentaBancaria" tabindex="-1" role="dialog">
@@ -329,6 +390,11 @@
                 })
             },*/
     /* C-rear beneficiario */
+            verCuentaBancaria: function(){
+                $('#verCuentaBancaria').modal('show');
+               
+            },
+
             agregarCuentaBancaria: function(){
                 $('#agregarCuentaBancaria').modal('show');
                

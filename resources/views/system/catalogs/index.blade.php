@@ -1,5 +1,53 @@
 @extends('layouts.backend')
 
+@section('title')
+@switch($catalogo)
+  @case("beneficiarios")
+    <title>Catálogo de beneficiarios</title>
+    @break
+    
+  @case("proveedores")
+  <title>Catálogo de proveedores</title>
+    @break
+
+  @case("cuentasbancarias")
+  <title>Catálogo de cuentas bancarias</title>
+    @break
+
+  @case("momentoscontables")
+  <title>Catálogo de momentos contables</title>
+    @break
+
+  @case("tipocuentas")
+    <title>Catálogo de tipos de cuentas</title>
+    @break
+
+  @case("clasifadmininterna")
+    <title>Catálogo de clasificación administrativa interna</title>
+    @break
+
+  @case("plancuentasconac")
+    <title>Catálogo de planes de cuentas CONAC</title>
+    @break
+
+  @case("clasifadminconac")
+    @break
+
+  @case("clasifobjetodelgasto")
+    <title>Catálogo clasificadores por objeto del gasto</title>
+    @break
+
+  @case("clasifrubrodeingresos")
+    <title>Catálogo de clasificadores por rubro de ingresos</title>
+    @break
+
+  @case("clasiffuncional")
+    <title>Catalogo de clasificadores funcionales</title>
+    @break
+
+@endswitch
+@endsection
+
 @section('content')
 <div class="content">
   @switch($catalogo)
@@ -59,7 +107,7 @@
       @break
 
   @endswitch
-  <!--<h2 class="content-heading">Catálogos</h2>
+  <!--<title>Catálogos</title>
 <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item">
       <a class="nav-link active" id="beneficiaries-tab" data-toggle="tab" href="#beneficiaries" role="tab" aria-controls="beneficiaries" aria-selected="true">Beneficiarios</a>

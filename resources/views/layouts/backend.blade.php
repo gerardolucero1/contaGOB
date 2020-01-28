@@ -256,7 +256,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="{{ request()->is('dashboard/clientes') ? ' active' : '' }}" href="/dashboard/clientes">
+                                    <a class="{{ request()->is('dashboard/issuanceexpenses') ? ' active' : '' }}" href="/dashboard/emisionpagoporgastos">
                                         <i class="si si-users"></i><span class="sidebar-mini-hide">Clientes</span>
                                     </a>
                                 </li>

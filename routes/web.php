@@ -33,6 +33,7 @@ Route::group(['middleware' => ['auth']], function () {
     // Catalago routes
     Route::get('dashboard/catalogos/{catalogo}', 'System\CatalogsController@index')->name('catalogs.index');
     Route::get('dashboard/polizas', 'System\PoliciesController@index')->name('policies.index');
+    Route::get('dashboard/emisionpagoporgastos', 'System\PoliciesController@index')->name('policies.index');
 
     // Users routes
     Route::get('dashboard/usuarios', 'System\UsersController@index')->name('users.index');

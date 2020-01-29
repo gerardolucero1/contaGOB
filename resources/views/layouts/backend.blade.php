@@ -257,7 +257,7 @@
                                 </li>
                                 <li>
                                     <a class="{{ request()->is('dashboard/issuanceexpenses') ? ' active' : '' }}" href="/dashboard/emisionpagoporgastos">
-                                        <i class="si si-users"></i><span class="sidebar-mini-hide">Clientes</span>
+                                        <i class="si si-users"></i><span class="sidebar-mini-hide">Emisión de pagos</span>
                                     </a>
                                 </li>
                                 

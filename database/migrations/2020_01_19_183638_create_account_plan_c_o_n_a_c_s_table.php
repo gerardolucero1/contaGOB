@@ -19,6 +19,7 @@ class CreateAccountPlanCONACSTable extends Migration
             $table->string('description')->nullable();
             $table->string('nature')->nullable();
             $table->string('clasification')->nullable();
+            $table->boolean('enable')->nullable();
             $table->timestamps();
         });
     }

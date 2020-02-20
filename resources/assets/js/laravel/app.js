@@ -40,6 +40,19 @@ Vue.component('task-component', require('./components/system/TaskComponent.vue')
 Vue.component('quotation-component', require('./components/system/QuotationComponent.vue').default);
 Vue.component('calendar-component', require('./components/system/CalendarComponent.vue').default);
 Vue.component('statistic-component', require('./components/system/StatisticComponent.vue').default);
+Vue.component('beneficiaries-component', require('./components/system/BeneficiariesComponent.vue').default);
+Vue.component('provider-component', require('./components/system/ProviderComponent.vue').default);
+Vue.component('bankaccount-component', require('./components/system/BankAccountComponent.vue').default);
+Vue.component('accountingmoment-component', require('./components/system/AccountingMomentComponent.vue').default);
+Vue.component('accounttype-component', require('./components/system/AccountTypeComponent.vue').default);
+Vue.component('internaladminclasification-component', require('./components/system/InternalAdminClassificationComponent.vue').default);
+Vue.component('accountplanconac-component', require('./components/system/AccountPlanCONACComponent.vue').default);
+Vue.component('adminconac-component', require('./components/system/AdminClassificationCONACComponent.vue').default);
+Vue.component('classifierbyexpendinture-component', require('./components/system/ClassifierByExpenditureComponent.vue').default);
+Vue.component('classifierrevenuecategory-component', require('./components/system/ClassifierRevenueCategoryComponent.vue').default);
+Vue.component('functionalcassification-component', require('./components/system/FunctionalClassificationComponent.vue').default);
+Vue.component('policies-component', require('./components/system/PoliciesComponent.vue').default);
+Vue.component('issuanceexpenses-component', require('./components/system/IssuanceExpensesComponent.vue').default);
 
 //Web Components
 Vue.component('app-component', require('./components/web/AppComponent.vue').default);

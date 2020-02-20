@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
-        <title>Codebase - Bootstrap 4 Admin Template &amp; UI Framework</title>
+        @yield('title')
 
         <meta name="description" content="Codebase - Bootstrap 4 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
         <meta name="author" content="pixelcave">
@@ -199,7 +199,7 @@
                         <!-- END Side User -->
     
                         <!-- Side Navigation -->
-                        <div class="content-side content-side-full">
+                        <div class="content-side content-side-full"> 
                             <ul class="nav-main">
                                 <li>
                                     <a class="{{ request()->is('dashboard') ? ' active' : '' }}" href="/dashboard">
@@ -209,24 +209,55 @@
                                 <li class="nav-main-heading">
                                     <span class="sidebar-mini-visible">VR</span><span class="sidebar-mini-hidden">Various</span>
                                 </li>
+                                <li class="{{ request()->is('/dashboard/catalagos/*') ? ' open' : '' }}">
+                                   <!-- <a class="{{ request()->is('dashboard/catalagos') ? ' open' : '' }} nav-submenu" href="/dashboard/catalagos">-->
+                                    <a class="nav-submenu" data-toggle="nav-submenu" href="#">
+                                        <i class="si si-folder"></i><span class="sidebar-mini-hide">Catalagos</span>
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <a class="{{ request()->is('/dashboard/catalogos/beneficiarios') ? ' active' : '' }}" href="/dashboard/catalogos/beneficiarios">Beneficiarios</a>
+                                        </li>
+                                        <li>
+                                            <a class="{{ request()->is('dashboard/catalogos/proveedores') ? ' active' : '' }}" href="/dashboard/catalogos/proveedores">Proveedores</a>
+                                        </li>
+                                        <li>
+                                            <a class="{{ request()->is('/dashboard/catalogos/cuentasbancarias') ? ' active' : '' }}" href="/dashboard/catalogos/cuentasbancarias">Cuentas bancarias</a>
+                                        </li>
+                                        <li>
+                                            <a class="{{ request()->is('/dashboard/catalogos/momentoscontables') ? ' active' : '' }}" href="/dashboard/catalogos/momentoscontables">Momentos contables</a>
+                                        </li>
+                                        <li>
+                                            <a class="{{ request()->is('/dashboard/catalogos/tipocuentas') ? ' active' : '' }}" href="/dashboard/catalogos/tipocuentas">Tipos de cuentas</a>
+                                        </li>
+                                        <li>
+                                            <a class="{{ request()->is('/dashboard/catalogos/clasifadmininterna') ? ' active' : '' }}" href="/dashboard/catalogos/clasifadmininterna">Clasific. adtva. interna</a>
+                                        </li>
+                                        <li>
+                                            <a class="{{ request()->is('/dashboard/catalogos/plancuentasconac') ? ' active' : '' }}" href="/dashboard/catalogos/plancuentasconac">Plan de cuentas CONAC</a>
+                                        </li>
+                                        <li>
+                                            <a class="{{ request()->is('/dashboard/catalogos/clasifadminconac') ? ' active' : '' }}" href="/dashboard/catalogos/clasifadminconac">Clasific. adtva. CONAC</a>
+                                        </li>
+                                        <li>
+                                            <a class="{{ request()->is('/dashboard/catalogos/clasifobjetodelgasto') ? ' active' : '' }}" href="/dashboard/catalogos/clasifobjetodelgasto">Clasific. por objeto del gasto</a>
+                                        </li>
+                                        <li>
+                                            <a class="{{ request()->is('/dashboard/catalogos/clasifrubrodeingresos') ? ' active' : '' }}" href="/dashboard/catalogos/clasifrubrodeingresos">Clasific. por rubro de ingresos</a>
+                                        </li>
+                                        <li>
+                                            <a class="{{ request()->is('/dashboard/catalogos/clasiffuncional') ? ' active' : '' }}" href="/dashboard/catalogos/clasiffuncional">Clasific. funcional</a>
+                                        </li>
+                                    </ul>
+                                </li>
                                 <li>
-                                    <a class="{{ request()->is('dashboard/portafolio') ? ' active' : '' }}" href="/dashboard/portafolio">
-                                        <i class="si si-folder"></i><span class="sidebar-mini-hide">Portafolio</span>
+                                    <a class="{{ request()->is('dashboard/polizas') ? ' active' : '' }}" href="/dashboard/polizas">
+                                        <i class="si si-emoticon-smile"></i><span class="sidebar-mini-hide">Pólizas</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="{{ request()->is('dashboard/usuarios') ? ' active' : '' }}" href="/dashboard/usuarios">
-                                        <i class="si si-emoticon-smile"></i><span class="sidebar-mini-hide">Usuarios</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="{{ request()->is('dashboard/clientes') ? ' active' : '' }}" href="/dashboard/clientes">
-                                        <i class="si si-users"></i><span class="sidebar-mini-hide">Clientes</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="{{ request()->is('dashboard/proyectos') ? ' active' : '' }}" href="/dashboard/proyectos">
-                                        <i class="si si-notebook"></i><span class="sidebar-mini-hide">Proyectos</span>
+                                    <a class="{{ request()->is('dashboard/issuanceexpenses') ? ' active' : '' }}" href="/dashboard/emisionpagoporgastos">
+                                        <i class="si si-users"></i><span class="sidebar-mini-hide">Emisión de pagos</span>
                                     </a>
                                 </li>
                                 
@@ -250,7 +281,7 @@
                                 </li>
                                 <li>
                                     <a href="/">
-                                        <i class="si si-globe"></i><span class="sidebar-mini-hide">Creato Studio</span>
+                                        <i class="si si-globe"></i><span class="sidebar-mini-hide">ContaGob</span>
                                     </a>
                                 </li>
                             </ul>

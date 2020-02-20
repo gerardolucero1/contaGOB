@@ -29,17 +29,11 @@ Route::group(['middleware' => ['auth']], function () {
     
     Route::match(['get', 'post'], '/dashboard', 'System\SystemController@index')->name('dashboard.admin');
 
-    // Portfolio routes
-    Route::get('dashboard/portafolio', 'System\PortfolioController@index')->name('portfolio.index');
-    Route::get('dashboard/portafolio/create', 'System\PortfolioController@create')->name('portfolio.create');
-    Route::get('dashboard/portafolio/show/{id}', 'System\PortfolioController@show')->name('portfolio.show');
-    Route::post('dashboard/portafolio', 'System\PortfolioController@store')->name('portfolio.store');
-    Route::get('dashboard/portafolio/edit/{id}', 'System\PortfolioController@edit')->name('portfolio.edit');
-    Route::put('dashboard/portafolio/{id}', 'System\PortfolioController@update')->name('portfolio.update');
-    Route::delete('dashboard/portafolio/{id}', 'System\PortfolioController@destroy')->name('portfolio.delete');
-        // Portfolio pictures
-        Route::post('dashboard/portafolio/{id}/imagenes', 'System\PortfolioController@upload')->name('portfolio.images');
-        Route::delete('dashboard/portafolio/image/{id}', 'System\PortfolioController@destroyImage')->name('portfolio.delete.image');
+
+    // Catalago routes
+    Route::get('dashboard/catalogos/{catalogo}', 'System\CatalogsController@index')->name('catalogs.index');
+    Route::get('dashboard/polizas', 'System\PoliciesController@index')->name('policies.index');
+    Route::get('dashboard/emisionpagoporgastos', 'System\PoliciesController@index')->name('policies.index');
 
     // Users routes
     Route::get('dashboard/usuarios', 'System\UsersController@index')->name('users.index');
@@ -51,20 +45,10 @@ Route::group(['middleware' => ['auth']], function () {
         //Clientes routes
         Route::get('dashboard/clientes', 'System\UsersController@clientesIndex')->name('clientes.index');
 
-    // Projects routes
-    Route::get('dashboard/proyectos', 'System\ProjectController@index')->name('projects.index');
-    Route::get('dashboard/proyectos/create', 'System\ProjectController@create')->name('projects.create');
-    Route::get('dashboard/proyectos/show/{id}', 'System\ProjectController@show')->name('projects.show');
-    Route::post('dashboard/proyectos', 'System\ProjectController@store')->name('projects.store');
-    Route::get('dashboard/proyectos/edit/{id}', 'System\ProjectController@edit')->name('projects.edit');
-    Route::put('dashboard/proyectos/{id}', 'System\ProjectController@update')->name('projects.update');
-        Route::put('dashboard/planos/{id}', 'System\ProjectController@updatePlans')->name('projects.plans');
-        Route::get('dashboard/proyectos/resumen/{id}', 'System\ProjectController@review')->name('projects.review');
-        Route::get('dashboard/proyectos/pdf/{id}', 'System\ProjectController@pdf')->name('projects.pdf');
 
     // Events routes
     Route::resource('dashboard/events', 'System\EventController');
-
+ 
         // Get cliente project
         Route::get('proyecto/cliente/{id}', function($id){
             $project = Project::find($id);
@@ -196,6 +180,77 @@ Route::group(['middleware' => ['auth']], function () {
         //Obtener datos
         Route::get('grafica-obtener-datos', 'System\SystemController@obtenerDatos');
 
+    //Catalogo Beneficiarios
+    Route::get('beneficiarios/obtener-lista', 'System\CatalogsController@obtenerListaBeneficiaries')->name('beneficiaries.table');
+    Route::post('beneficiarios/store', 'System\CatalogsController@storeBeneficiaries')->name('beneficiaries.store');
+    Route::put('beneficiarios/editar/{id}', 'System\CatalogsController@updateBeneficiaries')->name('beneficiaries.update');
+    Route::delete('beneficiarios/eliminar/{id}', 'System\CatalogsController@destroyBeneficiaries')->name('beneficiaries.destroy');
+
+    //Catalogo Proveedores
+    Route::get('proveedores/obtener-lista', 'System\CatalogsController@obtenerListaProvider')->name('provider.table');
+    Route::post('proveedores/store', 'System\CatalogsController@storeProvider')->name('provider.store');
+    Route::put('proveedores/editar/{id}', 'System\CatalogsController@updateProvider')->name('provider.update');
+    Route::delete('proveedores/eliminar/{id}', 'System\CatalogsController@destroyProvider')->name('provider.destroy');
+
+    //Catalogo Cuentas Bancarias
+    Route::get('cuentasbancarias/obtener-lista', 'System\CatalogsController@obtenerListaBankAccount')->name('bankaccount.table');
+    Route::post('cuentasbancarias/store', 'System\CatalogsController@storeBankAccount')->name('bankaccount.store');
+    Route::put('cuentasbancarias/editar/{id}', 'System\CatalogsController@updateBankAccount')->name('bankaccount.update');
+    Route::delete('cuentasbancarias/eliminar/{id}', 'System\CatalogsController@destroyBankAccount')->name('bankaccount.destroy');
+
+    //Catalogo Momentos contables
+    Route::get('momentoscontables/obtener-lista', 'System\CatalogsController@obtenerListaAccountingMoment')->name('bankaccount.table');
+    Route::post('momentoscontables/store', 'System\CatalogsController@storeAccountingMoment')->name('bankaccount.store');
+    Route::put('momentoscontables/editar/{id}', 'System\CatalogsController@updateAccountingMoment')->name('bankaccount.update');
+    Route::delete('momentoscontables/eliminar/{id}', 'System\CatalogsController@destroyAccountingMoment')->name('bankaccount.destroy');
+
+    //Catalogo Tipos de Cuentas
+    Route::get('tiposdecuentas/obtener-lista', 'System\CatalogsController@obtenerListaTiposCuentas')->name('accounttype.table');
+    Route::post('tiposdecuentas/store', 'System\CatalogsController@storeTiposCuentas')->name('accounttype.store');
+    Route::put('tiposdecuentas/editar/{id}', 'System\CatalogsController@updateTiposCuentas')->name('accounttype.update');
+    Route::delete('tiposdecuentas/eliminar/{id}', 'System\CatalogsController@destroyTiposCuentas')->name('accounttype.destroy');
+
+    //Catalogo Clasificacion administrativa interna
+    Route::get('clasificacionadmininterna/obtener-lista', 'System\CatalogsController@obtenerInternalAdminClassification')->name('internaladminclassification.table');
+    Route::post('clasificacionadmininterna/store', 'System\CatalogsController@storeInternalAdminClassification')->name('internaladminclassification.store');
+    Route::put('clasificacionadmininterna/editar/{id}', 'System\CatalogsController@updateInternalAdminClassification')->name('internaladminclassification.update');
+    Route::delete('clasificacionadmininterna/eliminar/{id}', 'System\CatalogsController@destroyInternalAdminClassification')->name('internaladminclassification.destroy');
+
+    //Catalogo Plan de cuentas CONAC
+    Route::get('planesconac/obtener-lista', 'System\CatalogsController@obtenerListaAccountPlanCONAC')->name('accountplanconac.table');
+    Route::post('planesconac/store', 'System\CatalogsController@storeAccountPlanCONAC')->name('accountplanconac.store');
+    Route::put('planesconac/editar/{id}', 'System\CatalogsController@updateAccountPlanCONAC')->name('accountplanconac.update');
+    Route::delete('planesconac/eliminar/{id}', 'System\CatalogsController@destroyAccountPlanCONAC')->name('accountplanconac.destroy');
+
+    //Catalogo Clasifiación administrativa CONAC
+    Route::get('adminconac/obtener-lista', 'System\CatalogsController@obtenerListaAdminClassificationCONAC')->name('adminconac.table');
+    Route::post('adminconac/store', 'System\CatalogsController@storeAdminClassificationCONAC')->name('adminconac.store');
+    Route::put('adminconac/editar/{id}', 'System\CatalogsController@updateAdminClassificationCONAC')->name('adminconac.update');
+    Route::delete('adminconac/eliminar/{id}', 'System\CatalogsController@destroyAdminClassificationCONAC')->name('adminconac.destroy');
+        
+    //Catalogo Clasifiador por objeto del gasto
+    Route::get('clasificdelgasto/obtener-lista', 'System\CatalogsController@obtenerClassifierByExpenditure')->name('classifierbyexpendinture.table');
+    Route::post('clasificdelgasto/store', 'System\CatalogsController@storeClassifierByExpenditure')->name('classifierbyexpendinture.store');
+    Route::put('clasificdelgasto/editar/{id}', 'System\CatalogsController@updateClassifierByExpenditure')->name('classifierbyexpendinture.update');
+    Route::delete('clasificdelgasto/eliminar/{id}', 'System\CatalogsController@destroyClassifierByExpenditure')->name('classifierbyexpendinture.destroy');
+
+    //Catalogo Clasifiador por objeto del gasto
+    Route::get('clasificrubroingresos/obtener-lista', 'System\CatalogsController@obtenerClassifierRevenueCategory')->name('classifierrevenue.table');
+    Route::post('clasificrubroingresos/store', 'System\CatalogsController@storeClassifierRevenueCategory')->name('classifierrevenue.store');
+    Route::put('clasificrubroingresos/editar/{id}', 'System\CatalogsController@updateClassifierRevenueCategory')->name('classifierrevenue.update');
+    Route::delete('clasificrubroingresos/eliminar/{id}', 'System\CatalogsController@destroyClassifierRevenueCategory')->name('classifierrevenue.destroy');
+
+    //Catalogo Clasificacion funcional
+    Route::get('classificacionfuncional/obtener-lista', 'System\CatalogsController@obtenerClassifierRevenueCategory')->name('functionalcassification.table');
+    Route::post('classificacionfuncional/store', 'System\CatalogsController@storeClassifierRevenueCategory')->name('functionalcassification.store');
+    Route::put('classificacionfuncional/editar/{id}', 'System\CatalogsController@updateClassifierRevenueCategory')->name('functionalcassification.update');
+    Route::delete('classificacionfuncional/eliminar/{id}', 'System\CatalogsController@destroyClassifierRevenueCategory')->name('functionalcassification.destroy');
+
+    //Catalogo Cuentas
+    Route::get('cuentas/obtener-lista', 'System\CatalogsController@obtenerClassifierRevenueCategory')->name('accounts.table');
+    Route::post('cuentas/store', 'System\CatalogsController@storeClassifierRevenueCategory')->name('accounts.store');
+    Route::put('cuentas/editar/{id}', 'System\CatalogsController@updateClassifierRevenueCategory')->name('accounts.update');
+    Route::delete('cuentas/eliminar/{id}', 'System\CatalogsController@destroyClassifierRevenueCategory')->name('accounts.destroy');
 });
 
 

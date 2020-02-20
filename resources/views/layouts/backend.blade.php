@@ -209,7 +209,7 @@
                                 <li class="nav-main-heading">
                                     <span class="sidebar-mini-visible">VR</span><span class="sidebar-mini-hidden">Various</span>
                                 </li>
-                                <li class="{{ request()->is('dashboard/catalagos') ? ' open' : '' }}">
+                                <li class="{{ request()->is('/dashboard/catalagos/*') ? ' open' : '' }}">
                                    <!-- <a class="{{ request()->is('dashboard/catalagos') ? ' open' : '' }} nav-submenu" href="/dashboard/catalagos">-->
                                     <a class="nav-submenu" data-toggle="nav-submenu" href="#">
                                         <i class="si si-folder"></i><span class="sidebar-mini-hide">Catalagos</span>
@@ -219,7 +219,7 @@
                                             <a class="{{ request()->is('/dashboard/catalogos/beneficiarios') ? ' active' : '' }}" href="/dashboard/catalogos/beneficiarios">Beneficiarios</a>
                                         </li>
                                         <li>
-                                            <a class="{{ request()->is('/dashboard/catalogos/proveedores') ? ' active' : '' }}" href="/dashboard/catalogos/proveedores">Proveedores</a>
+                                            <a class="{{ request()->is('dashboard/catalogos/proveedores') ? ' active' : '' }}" href="/dashboard/catalogos/proveedores">Proveedores</a>
                                         </li>
                                         <li>
                                             <a class="{{ request()->is('/dashboard/catalogos/cuentasbancarias') ? ' active' : '' }}" href="/dashboard/catalogos/cuentasbancarias">Cuentas bancarias</a>

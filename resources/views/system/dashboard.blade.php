@@ -10,7 +10,7 @@
                         <div class="float-left mt-10 d-none d-sm-block">
                             <i class="si si-briefcase fa-3x text-body-bg-dark"></i>
                         </div>
-                        <div class="font-size-h3 font-w600 js-count-to-enabled" data-toggle="countTo" data-speed="1000" data-to="1500">{{ count(App\Project::all()) }}</div>
+                        <div class="font-size-h3 font-w600 js-count-to-enabled" data-toggle="countTo" data-speed="1000" data-to="1500"></div>
                         <div class="font-size-sm font-w600 text-uppercase text-muted">Proyectos</div>
                     </div>
                 </a>
@@ -21,7 +21,7 @@
                         <div class="float-left mt-10 d-none d-sm-block">
                             <i class="si si-folder fa-3x text-body-bg-dark"></i>
                         </div>
-                        <div class="font-size-h3 font-w600 js-count-to-enabled" data-toggle="countTo" data-speed="1000" data-to="1500">{{ count(App\Portfolio::all()) }}</div>
+                        <div class="font-size-h3 font-w600 js-count-to-enabled" data-toggle="countTo" data-speed="1000" data-to="1500"></div>
                         <div class="font-size-sm font-w600 text-uppercase text-muted">Portafolios</div>
                     </div>
                 </a>
@@ -306,13 +306,13 @@
                         <div class="row py-20">
                             <div class="col-6 text-right border-r">
                                 <div class="js-appear-enabled animated fadeInLeft" data-toggle="appear" data-class="animated fadeInLeft">
-                                    <div class="font-size-h3 font-w600">{{ count(App\Portfolio::all()) }}</div>
+                                    <div class="font-size-h3 font-w600"></div>
                                     <div class="font-size-sm font-w600 text-uppercase text-muted">Portafolios</div>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="js-appear-enabled animated fadeInRight" data-toggle="appear" data-class="animated fadeInRight">
-                                    <div class="font-size-h3 font-w600">{{ count(App\Project::all()) }}</div>
+                                    <div class="font-size-h3 font-w600"></div>
                                     <div class="font-size-sm font-w600 text-uppercase text-muted">Proyectos</div>
                                 </div>
                             </div>

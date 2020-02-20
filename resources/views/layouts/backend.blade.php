@@ -255,11 +255,6 @@
                                         <i class="si si-emoticon-smile"></i><span class="sidebar-mini-hide">Usuarios</span>
                                     </a>
                                 </li>
-                                <li>
-                                    <a class="{{ request()->is('dashboard/clientes') ? ' active' : '' }}" href="/dashboard/clientes">
-                                        <i class="si si-users"></i><span class="sidebar-mini-hide">Clientes</span>
-                                    </a>
-                                </li>
                                 
                                 {{--  <li class="{{ request()->is('examples/*') ? ' open' : '' }}">
                                     <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-bulb"></i><span class="sidebar-mini-hide">Examples</span></a>

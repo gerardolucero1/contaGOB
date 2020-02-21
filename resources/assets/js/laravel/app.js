@@ -51,6 +51,8 @@ Vue.component('adminconac-component', require('./components/system/AdminClassifi
 Vue.component('classifierbyexpendinture-component', require('./components/system/ClassifierByExpenditureComponent.vue').default);
 Vue.component('classifierrevenuecategory-component', require('./components/system/ClassifierRevenueCategoryComponent.vue').default);
 Vue.component('functionalcassification-component', require('./components/system/FunctionalClassificationComponent.vue').default);
+Vue.component('policies-component', require('./components/system/PoliciesComponent.vue').default);
+Vue.component('issuanceexpenses-component', require('./components/system/IssuanceExpensesComponent.vue').default);
 
 //Web Components
 Vue.component('app-component', require('./components/web/AppComponent.vue').default);

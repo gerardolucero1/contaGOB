@@ -32,6 +32,8 @@ Route::group(['middleware' => ['auth']], function () {
 
     // Catalago routes
     Route::get('dashboard/catalogos/{catalogo}', 'System\CatalogsController@index')->name('catalogs.index');
+    Route::get('dashboard/polizas', 'System\PoliciesController@index')->name('policies.index');
+    Route::get('dashboard/emisionpagoporgastos', 'System\PoliciesController@index')->name('policies.index');
 
     // Users routes
     Route::get('dashboard/usuarios', 'System\UsersController@index')->name('users.index');
@@ -243,6 +245,12 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('classificacionfuncional/store', 'System\CatalogsController@storeClassifierRevenueCategory')->name('functionalcassification.store');
     Route::put('classificacionfuncional/editar/{id}', 'System\CatalogsController@updateClassifierRevenueCategory')->name('functionalcassification.update');
     Route::delete('classificacionfuncional/eliminar/{id}', 'System\CatalogsController@destroyClassifierRevenueCategory')->name('functionalcassification.destroy');
+
+    //Catalogo Cuentas
+    Route::get('cuentas/obtener-lista', 'System\CatalogsController@obtenerClassifierRevenueCategory')->name('accounts.table');
+    Route::post('cuentas/store', 'System\CatalogsController@storeClassifierRevenueCategory')->name('accounts.store');
+    Route::put('cuentas/editar/{id}', 'System\CatalogsController@updateClassifierRevenueCategory')->name('accounts.update');
+    Route::delete('cuentas/eliminar/{id}', 'System\CatalogsController@destroyClassifierRevenueCategory')->name('accounts.destroy');
 });
 
 

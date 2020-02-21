@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
-        <title>Codebase - Bootstrap 4 Admin Template &amp; UI Framework</title>
+        @yield('title')
 
         <meta name="description" content="Codebase - Bootstrap 4 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
         <meta name="author" content="pixelcave">
@@ -209,7 +209,7 @@
                                 <li class="nav-main-heading">
                                     <span class="sidebar-mini-visible">VR</span><span class="sidebar-mini-hidden">Various</span>
                                 </li>
-                                <li class="{{ request()->is('dashboard/catalagos') ? ' open' : '' }}">
+                                <li class="{{ request()->is('/dashboard/catalagos/*') ? ' open' : '' }}">
                                    <!-- <a class="{{ request()->is('dashboard/catalagos') ? ' open' : '' }} nav-submenu" href="/dashboard/catalagos">-->
                                     <a class="nav-submenu" data-toggle="nav-submenu" href="#">
                                         <i class="si si-folder"></i><span class="sidebar-mini-hide">Catalagos</span>
@@ -219,7 +219,7 @@
                                             <a class="{{ request()->is('/dashboard/catalogos/beneficiarios') ? ' active' : '' }}" href="/dashboard/catalogos/beneficiarios">Beneficiarios</a>
                                         </li>
                                         <li>
-                                            <a class="{{ request()->is('/dashboard/catalogos/proveedores') ? ' active' : '' }}" href="/dashboard/catalogos/proveedores">Proveedores</a>
+                                            <a class="{{ request()->is('dashboard/catalogos/proveedores') ? ' active' : '' }}" href="/dashboard/catalogos/proveedores">Proveedores</a>
                                         </li>
                                         <li>
                                             <a class="{{ request()->is('/dashboard/catalogos/cuentasbancarias') ? ' active' : '' }}" href="/dashboard/catalogos/cuentasbancarias">Cuentas bancarias</a>
@@ -251,8 +251,13 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a class="{{ request()->is('dashboard/usuarios') ? ' active' : '' }}" href="/dashboard/usuarios">
-                                        <i class="si si-emoticon-smile"></i><span class="sidebar-mini-hide">Usuarios</span>
+                                    <a class="{{ request()->is('dashboard/polizas') ? ' active' : '' }}" href="/dashboard/polizas">
+                                        <i class="si si-emoticon-smile"></i><span class="sidebar-mini-hide">Pólizas</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="{{ request()->is('dashboard/issuanceexpenses') ? ' active' : '' }}" href="/dashboard/emisionpagoporgastos">
+                                        <i class="si si-users"></i><span class="sidebar-mini-hide">Emisión de pagos</span>
                                     </a>
                                 </li>
                                 
